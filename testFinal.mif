@@ -1,0 +1,60 @@
+WIDTH=16;
+DEPTH=2048;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+0000: 0827; --     LOAD Value1
+0001: 9820; --     OUT LEDs
+0002: 8022; --     CALL Delay
+0003: 0828; --     LOAD Value2
+0004: 9820; --     OUT LEDs
+0005: 8022; --     CALL Delay
+0006: 0829; --     LOAD Value3
+0007: 9820; --     OUT LEDs
+0008: 8022; --     CALL Delay
+0009: 082A; --     LOAD Value4
+000A: 9820; --     OUT LEDs
+000B: 8022; --     CALL Delay
+000C: 082B; --     LOAD Value5
+000D: 9820; --     OUT LEDs
+000E: 8022; --     CALL Delay
+000F: 082C; --     LOAD Value6
+0010: 9820; --     OUT LEDs
+0011: 8022; --     CALL Delay
+0012: 082D; --     LOAD Value7
+0013: 9820; --     OUT LEDs
+0014: 8022; --     CALL Delay
+0015: 082E; --     LOAD Value8
+0016: 9820; --     OUT LEDs
+0017: 8022; --     CALL Delay
+0018: 082F; --     LOAD Value9
+0019: 9820; --     OUT LEDs
+001A: 8022; --     CALL Delay
+001B: 0830; --     LOAD Value10
+001C: 9820; --     OUT LEDs
+001D: 8022; --     CALL Delay
+001E: 0831; --     LOAD Value11
+001F: 9820; --     OUT LEDs
+0020: 8022; --     CALL Delay
+0021: 2821; -- 	JUMP InfiniteLoop
+0022: 9802; -- 	OUT    Timer
+0023: 9002; -- 	IN     Timer
+0024: 6F6A; -- 	ADDI   -150 ; 15 seconds
+0025: 3023; -- 	JNEG   WaitingLoop
+0026: 8800; -- 	RETURN    
+0027: 8420; -- Value1: DW &amp;H8420 ; All lanes open, 100% speed 
+0028: 8C20; -- Value2: DW &amp;H8C20 ; All lanes open, 20% speed 
+0029: 9440; -- Value3: DW &amp;H9440 ; Left half lanes open, 40% speed 
+002A: C440; -- Value4: DW &amp;HC440 ; Left half lanes open, 80% speed
+002B: 8E00; -- Value5: DW &amp;H8E00 ; Alternating lanes open, 20% speed
+002C: A600; -- Value6: DW &amp;HA600 ; Alternating lanes open, 60% speed
+002D: 9408; -- Value7: DW &amp;H9408 ; Randomish lanes open, 40% spped
+002E: 8408; -- Value8: DW &amp;H8408 ; Randomish lanes open, 100% spped
+002F: A201; -- Value9: DW &amp;HA201 ; Manually decided lanes by air traffic controllor are open, 60% speed
+0030: 8A01; -- Value10: DW &amp;H8A01 ; Manually decided lanes by air traffic controllor are open, 20% speed
+0031: 8410; -- Value11: DW &amp;H8410 ; All lanes off 
+[0032..07FF] : 0000; -- [empty memory]
+END;
+
